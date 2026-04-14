@@ -141,8 +141,8 @@ They just get a structured, rights-checked answer.
 | TELA OS | Touring + logistics + medical ops | Live |
 | Pearl OS | Internal creative/operational studio | Live |
 | ECOS | Label + marketing | Live |
-| Aperture OS | Public affairs | Live |
-| Tobias OS | Finance + diligence | Live |
+| Service OS | FAB | Live |
+| dotscrosess OS | Finance + diligence | Live |
 
 ---
 
