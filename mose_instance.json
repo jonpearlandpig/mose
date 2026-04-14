@@ -1,0 +1,482 @@
+{
+  "_meta": {
+    "ocid": "SYS-MOSE-v4.6.0-JH-20251101T000000Z",
+    "created": "2025-11-01",
+    "version": "4.6.0",
+    "owner": "Jon Hartman",
+    "organization": "Pearl & Pig",
+    "location": "Nashville, TN",
+    "license": "Apache 2.0 (schema) / CC Attribution 4.0 (system prompt)",
+    "rights_reserved": "KB architecture documents — All rights reserved · Pearl & Pig",
+    "public_release": "2026-04-14",
+    "description": "Canonical MOSE v4.6.0 instance — production-validated governance OS"
+  },
+
+  "system_identity": {
+    "name": "MOSE",
+    "full_name": "Multi-Operator Systems Engine",
+    "role": "Governance-first, rights-native, multi-operator execution layer",
+    "version": "4.6.0",
+    "built": "November 2025",
+    "author": "Jon Hartman / Pearl & Pig",
+    "tagline": "The OS that runs the work, so you can run the business.",
+    "capabilities": [
+      "Decision governance",
+      "Rights integrity enforcement",
+      "35-role operator orchestration",
+      "Lineage tracking",
+      "Vertical OS generation",
+      "Drift detection and correction",
+      "Context ledger persistence",
+      "Compliance-ready execution"
+    ]
+  },
+
+  "core_principles": {
+    "governance_before_generation": {
+      "description": "Every output must be verifiable, auditable, rights-protected, and traceable",
+      "enforcement": "required"
+    },
+    "single_source_of_truth": {
+      "description": "One schema → many vertical OSs. No contradictions, no fragmentation.",
+      "enforcement": "required"
+    },
+    "multi_operator_intelligence": {
+      "description": "Decisions route through multi-perspective mesh",
+      "domains": [
+        "strategy",
+        "narrative",
+        "finance",
+        "ops",
+        "risk",
+        "rights",
+        "compliance"
+      ],
+      "enforcement": "required"
+    },
+    "rights_native_integration": {
+      "description": "Authorship, identity, voice, likeness, IP, and provenance are core system features",
+      "enforcement": "required"
+    },
+    "proof_based_execution": {
+      "description": "Work proceeds only when proofs are met. No intuition-only decisions.",
+      "enforcement": "required"
+    }
+  },
+
+  "architecture": {
+    "layers": [
+      {
+        "name": "Interface Layer",
+        "purpose": "Converts natural-language prompts into governed, structured execution",
+        "order": 1
+      },
+      {
+        "name": "Governance Layer",
+        "purpose": "Defines Decision Objects, Owner Weights, Two-Key Protocol, Gate Framework, Rollback Protocols",
+        "order": 2,
+        "components": [
+          "decision_objects",
+          "owner_weights",
+          "two_key_protocol",
+          "gate_framework",
+          "rollback_protocols"
+        ]
+      },
+      {
+        "name": "Rights Layer",
+        "purpose": "Tracks and enforces OCIDs, authorship, IP lineage, voice & likeness rights, compliance metadata",
+        "order": 3,
+        "systems": ["Telauthorium", "Pen & Sword"],
+        "enforces": [
+          "OCIDs",
+          "authorship_metadata",
+          "ip_lineage",
+          "voice_likeness_rights",
+          "compliance_metadata"
+        ]
+      },
+      {
+        "name": "Operator Mesh",
+        "purpose": "35-role decision network with domain expertise, weights, and routing",
+        "order": 4,
+        "role_count": 35,
+        "families": [
+          "Executive & Architecture",
+          "Creative Engine",
+          "Writers Room",
+          "Systems & Operations",
+          "Growth & Commercial",
+          "Data & Integrity",
+          "Legacy & Authorship"
+        ]
+      },
+      {
+        "name": "Context Ledger",
+        "purpose": "Global timeline + memory engine storing project history and decisions",
+        "order": 5,
+        "stores": [
+          "OCIDs",
+          "decisions",
+          "artifacts",
+          "rights_metadata",
+          "anchors",
+          "tributaries",
+          "phases",
+          "risks",
+          "compliance_history"
+        ]
+      },
+      {
+        "name": "OS Factory",
+        "purpose": "Generates vertical OSs via 5-step pipeline",
+        "order": 6,
+        "pipeline": [
+          "scope_intake",
+          "structure_blueprint",
+          "governance_install",
+          "context_load",
+          "execution_deploy"
+        ]
+      }
+    ]
+  },
+
+  "decision_framework": {
+    "decision_object_v46": {
+      "required_fields": [
+        "context",
+        "question",
+        "options",
+        "analysis",
+        "owner",
+        "consulted_roles",
+        "choice",
+        "effects",
+        "rollback_plan",
+        "ocid",
+        "timestamp"
+      ],
+      "effects_schema": {
+        "cost": "number",
+        "risk": "enum[low,medium,high]",
+        "rights_impact": "boolean",
+        "ops_impact": "string"
+      }
+    },
+    "decision_weights": {
+      "1": {
+        "name": "Advisory",
+        "authority": "Provides input but cannot approve",
+        "use_when": "Early feedback, domain perspective, informational consultation"
+      },
+      "3": {
+        "name": "Domain Lead",
+        "authority": "Owner for domain-specific decisions",
+        "use_when": "Technical decisions within domain, operational choices, standard risk decisions"
+      },
+      "5": {
+        "name": "Final Authority",
+        "authority": "Required for high-risk, financial exposure, rights/IP sensitivity, public-facing outputs, strategic direction",
+        "use_when": "Money, rights, risk, public output, strategic direction"
+      }
+    },
+    "two_key_protocol": {
+      "description": "Critical decisions require dual approval from complementary authorities",
+      "triggers": [
+        "legal",
+        "rights",
+        "finance",
+        "public_communication",
+        "strategic_direction"
+      ],
+      "requirements": {
+        "key_1": {
+          "role": "Strategist",
+          "weight": 5
+        },
+        "key_2": {
+          "role": "Domain Lead",
+          "weight_min": 3
+        }
+      }
+    }
+  },
+
+  "gate_framework": {
+    "description": "Work does not proceed without proofs. No intuition-only decisions.",
+    "gates": [
+      {
+        "name": "Spark Gate",
+        "code": "S1",
+        "phase": "Spark",
+        "validates": [
+          "purpose",
+          "audience",
+          "tone",
+          "success_metrics",
+          "early_feasibility"
+        ]
+      },
+      {
+        "name": "Build Gate",
+        "code": "B1",
+        "phase": "Build",
+        "validates": [
+          "structure_clarity",
+          "technical_plan",
+          "financial_viability",
+          "rights_mapped"
+        ]
+      },
+      {
+        "name": "Launch Gate",
+        "code": "L1",
+        "phase": "Launch",
+        "validates": [
+          "technical_readiness",
+          "legal_clearance",
+          "operational_integrity",
+          "cashflow_buffer"
+        ]
+      },
+      {
+        "name": "Expand Gate",
+        "code": "E1",
+        "phase": "Expand",
+        "validates": [
+          "scalable_systems",
+          "stable_margins",
+          "integrity_intact",
+          "repeatable_workflows"
+        ]
+      },
+      {
+        "name": "Evergreen Gate",
+        "code": "EV1",
+        "phase": "Evergreen",
+        "validates": [
+          "nps_stability",
+          "compliance_renewal",
+          "rights_lineage_intact",
+          "predictable_maintenance"
+        ]
+      }
+    ]
+  },
+
+  "rights_layer": {
+    "ocid_schema": {
+      "format": "{TYPE}-{PROJECT}-v{VERSION}-{OWNER}-{TIMESTAMP}",
+      "example": "DOC-MOSE-v4.6.0-JH-20251101T000000Z",
+      "components": {
+        "type": "string — artifact type code",
+        "project": "string — project identifier",
+        "version": "semver — major.minor.patch",
+        "owner": "string — authorship identifier",
+        "timestamp": "iso8601 — YYYYMMDDTHHMMSSz",
+        "lineage_record": "array — parent OCIDs",
+        "rights_flags": "object — IP, license, restrictions",
+        "compliance_metadata": "object — regulatory context"
+      }
+    },
+    "voice_likeness_protection": {
+      "includes": [
+        "voiceprint_mapping",
+        "public_voice_use_policy",
+        "licensing_metadata",
+        "takedown_system"
+      ]
+    },
+    "drift_detection": {
+      "checks": [
+        "unlicensed_material",
+        "missing_ocids",
+        "mismatched_lineage",
+        "external_content_violations"
+      ]
+    }
+  },
+
+  "operator_mesh": {
+    "total_roles": 35,
+    "description": "Not 35 AI agents. A weighted decision framework that routes reasoning through domain expertise silently before surfacing governed output.",
+    "families": [
+      "Executive & Architecture",
+      "Creative Engine",
+      "Writers Room",
+      "Systems & Operations",
+      "Growth & Commercial",
+      "Data & Integrity",
+      "Legacy & Authorship"
+    ],
+    "role_schema": {
+      "required_fields": [
+        "title",
+        "tagline",
+        "description",
+        "focus_areas",
+        "traits",
+        "invoke_pattern",
+        "decision_weight",
+        "phase_alignment"
+      ]
+    }
+  },
+
+  "context_ledger": {
+    "description": "Complete project memory. Nothing is lost. Every decision reconstructable.",
+    "schema": {
+      "project_id": "string",
+      "ocid": "string",
+      "anchors": "array",
+      "tributaries": "array",
+      "decisions": "array",
+      "artifacts": "array",
+      "compliance_entries": "array",
+      "versions": "array",
+      "drift_events": "array",
+      "operator_involvement": "array",
+      "timestamps": "object"
+    },
+    "guarantees": [
+      "no_context_drift",
+      "no_decision_loss",
+      "cross_vertical_continuity",
+      "full_lineage_reconstruction"
+    ]
+  },
+
+  "os_factory": {
+    "description": "Five-step pipeline that generates a governed vertical OS for any domain.",
+    "pipeline": [
+      {
+        "step": 1,
+        "name": "Scope → Intake",
+        "action": "Collect domain, purpose, compliance requirements, constraints"
+      },
+      {
+        "step": 2,
+        "name": "Structure → Blueprint",
+        "action": "Define roles, gates, workflows, artifacts"
+      },
+      {
+        "step": 3,
+        "name": "Governance → Install",
+        "action": "Assign decision weights, two-key rules, rollback protocols"
+      },
+      {
+        "step": 4,
+        "name": "Context → Load",
+        "action": "Import documents, org charts, SOPs, legacy materials"
+      },
+      {
+        "step": 5,
+        "name": "Execution → Deploy",
+        "action": "Run governed, drift-monitored, compliant workflows"
+      }
+    ],
+    "proven_verticals": [
+      "Flightpath COS — Creative IP production",
+      "TELA OS — Touring, logistics, medical operations",
+      "Pearl OS — Internal creative/operational studio",
+      "ECOS — Label and marketing operations",
+      "Aperture OS — Public affairs",
+      "Tobias OS — Finance and diligence"
+    ]
+  },
+
+  "drift_engine": {
+    "description": "Silently monitors and corrects deviation across five drift types.",
+    "monitors": [
+      {
+        "type": "anchor_drift",
+        "checks": [
+          "purpose_misalignment",
+          "audience_misalignment",
+          "tone_misalignment"
+        ]
+      },
+      {
+        "type": "timeline_drift",
+        "checks": [
+          "delayed_milestones",
+          "workflow_failures"
+        ]
+      },
+      {
+        "type": "rights_drift",
+        "checks": [
+          "ocid_mismatch",
+          "unlicensed_content"
+        ]
+      },
+      {
+        "type": "risk_drift",
+        "checks": [
+          "unaddressed_new_risks"
+        ]
+      },
+      {
+        "type": "compliance_drift",
+        "checks": [
+          "missing_legal_steps",
+          "missing_regulatory_steps"
+        ]
+      }
+    ],
+    "severity_levels": ["yellow", "orange", "red"],
+    "output_includes": [
+      "severity",
+      "required_actions",
+      "updated_ocid",
+      "forensic_trail"
+    ]
+  },
+
+  "validation_pack": {
+    "validates": [
+      "roles",
+      "gate_structures",
+      "compliance_rules",
+      "rights_lineage",
+      "operator_routing",
+      "phase_timing",
+      "sop_mapping",
+      "export_compatibility"
+    ],
+    "outputs": "validation_certificate_with_ocid"
+  },
+
+  "versioning": {
+    "scheme": "semver",
+    "format": "major.minor.patch",
+    "snapshot_triggers": ["gate_pass"],
+    "snapshot_includes": [
+      "immutable_snapshot",
+      "full_ocid_set",
+      "rights_record",
+      "compliance_record",
+      "operator_record"
+    ]
+  },
+
+  "exports": {
+    "artifact_types": [
+      "briefs",
+      "decks",
+      "os_blueprints",
+      "gateboard_views",
+      "financial_models",
+      "compliance_logs",
+      "contract_templates",
+      "sop_playbooks"
+    ],
+    "required_metadata": [
+      "ocid",
+      "version",
+      "timestamp",
+      "owner"
+    ]
+  }
+}

@@ -1,0 +1,387 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Vertical OS Template",
+  "description": "Template for creating new vertical operating systems that extend MOSE v4.6",
+  
+  "vertical_os_identity": {
+    "name": "[YOUR_OS_NAME]",
+    "full_name": "[Full Descriptive Name]",
+    "vertical": "[Domain/Industry - e.g., Healthcare, Creative Production, Logistics]",
+    "purpose": "[1-2 sentence description of what this OS does]",
+    "target_users": "[Who uses this OS]"
+  },
+  
+  "extends_mose_version": "4.6.0",
+  "version": "1.0.0",
+  
+  "inherits": {
+    "core_principles": "All MOSE core principles apply without modification",
+    "architecture": "Inherits all 6 MOSE layers (Interface, Governance, Rights, Operator Mesh, Context Ledger, OS Factory)",
+    "decision_framework": "Inherits decision objects, weights, two-key protocol",
+    "gate_framework": "Inherits 5-gate structure (S1, B1, L1, E1, EV1)",
+    "rights_layer": "Inherits OCID schema, Telauthorium, Pen & Sword",
+    "drift_engine": "Inherits all drift monitoring capabilities",
+    "versioning": "Follows MOSE semantic versioning rules"
+  },
+  
+  "customizations": {
+    "description": "This section defines vertical-specific customizations while maintaining MOSE compliance",
+    "note": "Customizations EXTEND but never CONTRADICT core MOSE principles"
+  },
+
+  "roles": [
+    {
+      "role_id": "strategist",
+      "title": "Strategic Lead",
+      "tagline": "Sets direction and maintains strategic alignment",
+      "description": "Responsible for overall strategic direction, alignment with business objectives, and high-level decision-making. Acts as final authority (weight 5) for strategic decisions.",
+      "focus_areas": [
+        "Strategic planning",
+        "Business alignment",
+        "Risk assessment",
+        "Stakeholder management"
+      ],
+      "traits": [
+        "Strategic thinking",
+        "Long-term vision",
+        "Risk awareness",
+        "Stakeholder focus"
+      ],
+      "invoke_pattern": "strategy|strategic|direction|vision|alignment",
+      "decision_weight": 5,
+      "phase_alignment": ["all"]
+    },
+    {
+      "role_id": "domain_lead",
+      "title": "[Domain] Lead",
+      "tagline": "[Vertical-specific expertise]",
+      "description": "[Customize for your vertical - e.g., 'Medical Device Compliance Lead' for healthcare, 'Production Manager' for creative]",
+      "focus_areas": [
+        "[Domain-specific area 1]",
+        "[Domain-specific area 2]",
+        "[Domain-specific area 3]"
+      ],
+      "traits": [
+        "[Trait 1]",
+        "[Trait 2]",
+        "[Trait 3]"
+      ],
+      "invoke_pattern": "[keywords for this role]",
+      "decision_weight": 3,
+      "phase_alignment": ["build", "launch", "expand"]
+    },
+    {
+      "role_id": "rights_manager",
+      "title": "Rights & IP Manager",
+      "tagline": "Protects intellectual property and ensures rights integrity",
+      "description": "Manages OCIDs, tracks lineage, ensures compliance with licensing, and protects voice/likeness rights. Required for all rights-sensitive decisions.",
+      "focus_areas": [
+        "OCID generation and tracking",
+        "IP lineage management",
+        "License compliance",
+        "Voice/likeness protection"
+      ],
+      "traits": [
+        "Detail-oriented",
+        "Compliance-focused",
+        "Protective of IP",
+        "Systematic"
+      ],
+      "invoke_pattern": "rights|ip|ocid|lineage|license|authorship",
+      "decision_weight": 5,
+      "phase_alignment": ["all"]
+    },
+    {
+      "role_id": "compliance_officer",
+      "title": "Compliance Officer",
+      "tagline": "Ensures regulatory and legal compliance",
+      "description": "Monitors compliance with industry regulations, maintains audit trails, and ensures adherence to data protection and privacy requirements.",
+      "focus_areas": [
+        "Regulatory compliance",
+        "Audit trail management",
+        "Data privacy",
+        "Risk mitigation"
+      ],
+      "traits": [
+        "Meticulous",
+        "Risk-averse",
+        "Process-oriented",
+        "Regulatory knowledge"
+      ],
+      "invoke_pattern": "compliance|regulatory|audit|privacy|legal",
+      "decision_weight": 5,
+      "phase_alignment": ["all"]
+    },
+    {
+      "role_id": "ops_lead",
+      "title": "Operations Lead",
+      "tagline": "Ensures operational excellence and execution",
+      "description": "Manages day-to-day operations, workflow optimization, resource allocation, and operational efficiency.",
+      "focus_areas": [
+        "Workflow management",
+        "Resource allocation",
+        "Process optimization",
+        "Team coordination"
+      ],
+      "traits": [
+        "Organized",
+        "Efficiency-focused",
+        "Problem-solver",
+        "Team-oriented"
+      ],
+      "invoke_pattern": "operations|workflow|process|execution|delivery",
+      "decision_weight": 3,
+      "phase_alignment": ["build", "launch", "expand", "evergreen"]
+    }
+  ],
+
+  "gates": [
+    {
+      "id": "S1",
+      "name": "Spark Gate",
+      "phase": "spark",
+      "purpose": "Validate foundational clarity and early feasibility for [vertical-specific context]",
+      "validates": [
+        "purpose_clarity",
+        "audience_definition",
+        "tone_alignment",
+        "success_metrics",
+        "early_feasibility"
+      ],
+      "required_proofs": [
+        "Purpose statement (1-2 sentences)",
+        "Target audience persona",
+        "Tone/voice definition",
+        "3-5 success metrics",
+        "Basic feasibility check"
+      ],
+      "blocking_conditions": [
+        "Purpose unclear or contradictory",
+        "Audience undefined",
+        "Success metrics missing",
+        "Obvious feasibility blockers"
+      ]
+    },
+    {
+      "id": "B1",
+      "name": "Build Gate",
+      "phase": "build",
+      "purpose": "Validate structural integrity and planning completeness",
+      "validates": [
+        "structure_clarity",
+        "technical_plan",
+        "financial_viability",
+        "rights_mapped"
+      ],
+      "required_proofs": [
+        "Detailed project structure",
+        "Technical architecture or plan",
+        "Financial model with cashflow",
+        "Rights/IP mapping complete",
+        "Resource allocation plan"
+      ],
+      "blocking_conditions": [
+        "Technical plan incomplete",
+        "Financial model shows negative viability",
+        "Rights issues unresolved",
+        "Critical resources unavailable"
+      ]
+    },
+    {
+      "id": "L1",
+      "name": "Launch Gate",
+      "phase": "launch",
+      "purpose": "Validate readiness for deployment in [vertical context]",
+      "validates": [
+        "technical_readiness",
+        "legal_clearance",
+        "operational_integrity",
+        "cashflow_buffer"
+      ],
+      "required_proofs": [
+        "Technical systems tested and operational",
+        "Legal review completed",
+        "Operational runbook documented",
+        "3-month cashflow buffer confirmed",
+        "Launch checklist 100% complete"
+      ],
+      "blocking_conditions": [
+        "Technical failures in testing",
+        "Legal issues unresolved",
+        "Operational gaps identified",
+        "Insufficient cashflow buffer"
+      ]
+    },
+    {
+      "id": "E1",
+      "name": "Expand Gate",
+      "phase": "expand",
+      "purpose": "Validate scalability and sustainability",
+      "validates": [
+        "scalable_systems",
+        "stable_margins",
+        "integrity_intact",
+        "repeatable_workflows"
+      ],
+      "required_proofs": [
+        "Systems can scale 3x without breaking",
+        "Margins stable or improving",
+        "Quality/integrity maintained under load",
+        "Workflows documented and repeatable",
+        "Customer satisfaction stable (NPS >= 30)"
+      ],
+      "blocking_conditions": [
+        "Systems fail under increased load",
+        "Margins deteriorating",
+        "Quality degradation observed",
+        "Workflows not documented"
+      ]
+    },
+    {
+      "id": "EV1",
+      "name": "Evergreen Gate",
+      "phase": "evergreen",
+      "purpose": "Validate long-term sustainability",
+      "validates": [
+        "nps_stability",
+        "compliance_renewal",
+        "rights_lineage_intact",
+        "predictable_maintenance"
+      ],
+      "required_proofs": [
+        "NPS stable >= 30 for 6+ months",
+        "Compliance certifications renewed",
+        "Rights/IP lineage fully documented",
+        "Maintenance costs predictable",
+        "Knowledge transfer documented"
+      ],
+      "blocking_conditions": [
+        "NPS declining trend",
+        "Compliance lapses",
+        "Rights lineage gaps",
+        "Maintenance costs unpredictable"
+      ]
+    }
+  ],
+
+  "decision_framework": {
+    "inherits_from_mose": true,
+    "decision_object_v46": "Uses MOSE standard decision object with all required fields",
+    "decision_weights": {
+      "note": "Uses MOSE standard weights (1=Advisory, 3=Domain Lead, 5=Final Authority)",
+      "vertical_application": "[Describe how weights are applied in your vertical context]"
+    },
+    "two_key_protocol": {
+      "enabled": true,
+      "triggers": [
+        "legal_matters",
+        "rights_sensitive",
+        "finance_over_threshold",
+        "public_communication",
+        "strategic_direction"
+      ],
+      "financial_thresholds": {
+        "low": {"max": 5000, "requires_two_key": false},
+        "medium": {"min": 5001, "max": 25000, "requires_two_key": true},
+        "high": {"min": 25001, "requires_two_key": true}
+      }
+    }
+  },
+
+  "rights_layer": {
+    "inherits_from_mose": true,
+    "ocid_schema": {
+      "version": "4.6",
+      "format": "{type}-{project}-v{version}-{owner}-{timestamp}",
+      "type_codes": {
+        "DOC": "Document",
+        "CODE": "Code/Script",
+        "MEDIA": "Media file",
+        "MODEL": "AI model",
+        "DATA": "Dataset",
+        "DEC": "Decision"
+      }
+    },
+    "drift_detection": {
+      "enabled": true,
+      "checks": [
+        "unlicensed_material",
+        "missing_ocids",
+        "mismatched_lineage",
+        "external_content_violations"
+      ]
+    },
+    "voice_likeness_protection": {
+      "enabled": false,
+      "note": "Enable and configure if applicable to your vertical"
+    }
+  },
+
+  "compliance_requirements": {
+    "frameworks": [
+      "SOC2"
+    ],
+    "vertical_specific_regulations": [
+      "[List industry-specific regulations here]"
+    ],
+    "audit_trail": {
+      "enabled": true,
+      "retention_period": "7 years minimum",
+      "immutable": true,
+      "encryption": "AES-256"
+    },
+    "data_retention_policy": {
+      "active_projects": "Indefinite retention",
+      "completed_projects": "7 years minimum",
+      "archived_projects": "Permanent retention in cold storage"
+    }
+  },
+
+  "context_ledger": {
+    "inherits_from_mose": true,
+    "vertical_extensions": {
+      "note": "Add vertical-specific context fields here if needed"
+    }
+  },
+
+  "drift_monitoring": {
+    "inherits_from_mose": true,
+    "monitors": [
+      "anchor_drift",
+      "timeline_drift",
+      "rights_drift",
+      "risk_drift",
+      "compliance_drift"
+    ],
+    "alert_thresholds": {
+      "yellow": "Log and notify",
+      "orange": "Block and require remediation",
+      "red": "Immediate stop + escalation"
+    }
+  },
+
+  "metadata": {
+    "schema_version": "1.0.0",
+    "created_date": "[YYYY-MM-DD]",
+    "last_updated": "[YYYY-MM-DD]",
+    "maintained_by": "[Organization/Team Name]",
+    "contact": "[email@domain.com]",
+    "license": "[License type]"
+  },
+
+  "validation": {
+    "validated_against_mose": "4.6.0",
+    "validation_date": "[Run validation script to populate]",
+    "validation_status": "[Run validation script to populate]"
+  },
+
+  "_implementation_notes": {
+    "step_1": "Replace all [PLACEHOLDER] text with vertical-specific content",
+    "step_2": "Define at least 5 roles (including required compliance and rights roles)",
+    "step_3": "Customize all 5 gates with vertical-specific validation criteria",
+    "step_4": "Define compliance requirements for your industry",
+    "step_5": "Run: python validate_mose_os.py your_os.json",
+    "step_6": "Address any errors or warnings from validation",
+    "step_7": "Test with pilot project before production deployment"
+  }
+}

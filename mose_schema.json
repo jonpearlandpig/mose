@@ -1,0 +1,1218 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://pearlandpig.com/schemas/mose/v4.6.0",
+  "title": "MOSE OS Master Schema",
+  "version": "4.6.0",
+  "description": "Canonical governance kernel for all vertical operating systems. This is the single source of truth that all vertical OSs must inherit from and validate against.",
+  
+  "system_identity": {
+    "name": "MOSE",
+    "full_name": "Multi-Operator Systems Engine",
+    "role": "Governance-first, rights-native, multi-operator execution layer for AI-enabled work",
+    "capabilities": [
+      "Decision governance and auditing",
+      "Rights integrity enforcement",
+      "35-role operator orchestration",
+      "Lineage tracking and provenance",
+      "Vertical OS generation via OS Factory",
+      "Multi-model provider abstraction"
+    ],
+    "position": "Sits above all model providers and ensures safe, compliant, scalable enterprise AI"
+  },
+
+  "core_principles": {
+    "governance_before_generation": {
+      "description": "Every output must be verifiable, auditable, rights-protected, and traceable",
+      "enforcement": "required",
+      "validation_rules": [
+        "All artifacts must have OCIDs",
+        "All decisions must have decision objects",
+        "All outputs must pass gate validation"
+      ]
+    },
+    "single_source_of_truth": {
+      "description": "One schema → many vertical OSs. No contradictions, no fragmentation.",
+      "enforcement": "required",
+      "validation_rules": [
+        "All vertical OSs must extend this schema",
+        "No vertical OS may contradict core principles",
+        "All changes must increment version number"
+      ]
+    },
+    "multi_operator_intelligence": {
+      "description": "Decisions route through multi-perspective mesh",
+      "domains": [
+        "strategy",
+        "narrative", 
+        "finance",
+        "ops",
+        "risk",
+        "rights",
+        "compliance"
+      ],
+      "enforcement": "required",
+      "validation_rules": [
+        "Complex decisions must route through 3+ operators",
+        "High-risk decisions must include risk operator",
+        "Rights-sensitive decisions must include rights operator"
+      ]
+    },
+    "rights_native_integration": {
+      "description": "Authorship, identity, voice, likeness, IP, and provenance are core system features",
+      "enforcement": "required",
+      "validation_rules": [
+        "All artifacts must have authorship metadata",
+        "Voice/likeness must have explicit consent records",
+        "IP lineage must be traceable to origin"
+      ]
+    },
+    "proof_based_execution": {
+      "description": "Work proceeds only when proofs are met. No intuition-only decisions.",
+      "enforcement": "required",
+      "validation_rules": [
+        "Gate passage requires proof satisfaction",
+        "High-risk decisions require documented analysis",
+        "Financial commitments require validated models"
+      ]
+    }
+  },
+
+  "architecture": {
+    "layers": [
+      {
+        "id": "interface",
+        "name": "Interface Layer",
+        "purpose": "Converts natural-language prompts into governed, structured execution",
+        "order": 1,
+        "responsibilities": [
+          "Natural language parsing",
+          "Intent classification",
+          "Operator routing decisions",
+          "Context injection"
+        ]
+      },
+      {
+        "id": "governance",
+        "name": "Governance Layer",
+        "purpose": "Defines Decision Objects, Owner Weights, Two-Key Protocol, Gate Framework",
+        "order": 2,
+        "components": [
+          "decision_objects",
+          "owner_weights",
+          "two_key_protocol",
+          "gate_framework",
+          "rollback_protocols"
+        ],
+        "responsibilities": [
+          "Decision validation",
+          "Weight enforcement",
+          "Protocol compliance",
+          "Gate management"
+        ]
+      },
+      {
+        "id": "rights",
+        "name": "Rights Layer",
+        "purpose": "Tracks and enforces OCIDs, authorship, IP lineage, compliance",
+        "order": 3,
+        "systems": ["Telauthorium", "Pen & Sword"],
+        "enforces": [
+          "OCIDs",
+          "authorship_metadata",
+          "ip_lineage",
+          "voice_likeness_rights",
+          "compliance_metadata"
+        ],
+        "responsibilities": [
+          "OCID generation and tracking",
+          "Rights validation",
+          "Drift detection",
+          "Compliance monitoring"
+        ]
+      },
+      {
+        "id": "operator_mesh",
+        "name": "Operator Mesh",
+        "purpose": "35-role decision network with domain expertise",
+        "order": 4,
+        "role_count": 35,
+        "responsibilities": [
+          "Multi-perspective analysis",
+          "Domain-specific execution",
+          "Collaborative decision-making",
+          "Context preservation"
+        ]
+      },
+      {
+        "id": "context_ledger",
+        "name": "Context Ledger",
+        "purpose": "Global timeline + memory engine",
+        "order": 5,
+        "stores": [
+          "OCIDs",
+          "decisions",
+          "artifacts",
+          "rights_metadata",
+          "anchors",
+          "tributaries",
+          "phases",
+          "risks",
+          "compliance_history"
+        ],
+        "guarantees": [
+          "no_context_drift",
+          "no_decision_loss",
+          "cross_vertical_continuity",
+          "full_lineage_reconstruction"
+        ]
+      },
+      {
+        "id": "os_factory",
+        "name": "OS Factory",
+        "purpose": "Generates vertical OSs via 5-step pipeline",
+        "order": 6,
+        "pipeline": [
+          "scope_intake",
+          "structure_blueprint",
+          "governance_install",
+          "context_load",
+          "execution_deploy"
+        ]
+      }
+    ]
+  },
+
+  "decision_framework": {
+    "decision_object_v46": {
+      "version": "4.6",
+      "required_fields": [
+        "context",
+        "question",
+        "options",
+        "analysis",
+        "owner",
+        "consulted_roles",
+        "choice",
+        "effects",
+        "rollback_plan",
+        "ocid",
+        "timestamp"
+      ],
+      "field_schemas": {
+        "context": {
+          "type": "string",
+          "description": "Background and situational information for the decision"
+        },
+        "question": {
+          "type": "string",
+          "description": "The specific problem or decision to be made"
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "option_id": {"type": "string"},
+              "description": {"type": "string"},
+              "pros": {"type": "array", "items": {"type": "string"}},
+              "cons": {"type": "array", "items": {"type": "string"}}
+            }
+          }
+        },
+        "analysis": {
+          "type": "object",
+          "properties": {
+            "facts": {"type": "array", "items": {"type": "string"}},
+            "constraints": {"type": "array", "items": {"type": "string"}},
+            "assumptions": {"type": "array", "items": {"type": "string"}}
+          }
+        },
+        "owner": {
+          "type": "object",
+          "properties": {
+            "role": {"type": "string"},
+            "weight": {"type": "integer", "enum": [1, 3, 5]}
+          },
+          "required": ["role", "weight"]
+        },
+        "consulted_roles": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "role": {"type": "string"},
+              "weight": {"type": "integer"},
+              "input": {"type": "string"}
+            }
+          }
+        },
+        "choice": {
+          "type": "object",
+          "properties": {
+            "selected_option": {"type": "string"},
+            "rationale": {"type": "string"}
+          }
+        },
+        "effects": {
+          "type": "object",
+          "properties": {
+            "cost": {
+              "type": "object",
+              "properties": {
+                "amount": {"type": "number"},
+                "currency": {"type": "string", "default": "USD"},
+                "timeframe": {"type": "string"}
+              }
+            },
+            "risk": {
+              "type": "string",
+              "enum": ["low", "medium", "high", "critical"]
+            },
+            "rights_impact": {"type": "boolean"},
+            "ops_impact": {"type": "string"},
+            "timeline_impact": {"type": "string"}
+          }
+        },
+        "rollback_plan": {
+          "type": "object",
+          "properties": {
+            "trigger_conditions": {"type": "array", "items": {"type": "string"}},
+            "rollback_steps": {"type": "array", "items": {"type": "string"}},
+            "rollback_owner": {"type": "string"}
+          }
+        },
+        "ocid": {"type": "string", "pattern": "^[A-Z]+-[A-Z0-9]+-v[0-9]+\\.[0-9]+\\.[0-9]+-[A-Z]+-[0-9]{14}$"},
+        "timestamp": {"type": "string", "format": "date-time"}
+      }
+    },
+    
+    "decision_weights": {
+      "1": {
+        "name": "Advisory",
+        "authority": "Provides input but cannot approve",
+        "use_cases": [
+          "Early feedback",
+          "Domain perspective without approval power",
+          "Informational consultation"
+        ]
+      },
+      "3": {
+        "name": "Domain Lead",
+        "authority": "Owner for domain-specific decisions",
+        "use_cases": [
+          "Technical decisions within domain",
+          "Operational choices",
+          "Standard risk decisions"
+        ]
+      },
+      "5": {
+        "name": "Final Authority",
+        "authority": "Required for high-risk, financial, rights-sensitive, public-facing decisions",
+        "use_cases": [
+          "Strategic direction",
+          "High financial exposure",
+          "Legal/rights sensitivity",
+          "Public communication",
+          "Brand-defining choices"
+        ]
+      }
+    },
+
+    "two_key_protocol": {
+      "description": "Critical decisions require dual approval from complementary authorities",
+      "triggers": [
+        "legal_matters",
+        "rights_sensitive",
+        "finance_over_threshold",
+        "public_communication",
+        "strategic_direction",
+        "brand_defining"
+      ],
+      "requirements": {
+        "key_1": {
+          "role_category": "Strategist",
+          "weight": 5,
+          "rationale": "Ensures strategic alignment"
+        },
+        "key_2": {
+          "role_category": "Domain Lead",
+          "weight_min": 3,
+          "rationale": "Ensures domain expertise and feasibility"
+        }
+      },
+      "financial_thresholds": {
+        "low": {"max": 5000, "requires_two_key": false},
+        "medium": {"min": 5001, "max": 25000, "requires_two_key": true},
+        "high": {"min": 25001, "requires_two_key": true}
+      }
+    }
+  },
+
+  "gate_framework": {
+    "description": "Sequential validation gates aligned to project lifecycle phases",
+    "gates": [
+      {
+        "id": "S1",
+        "name": "Spark Gate",
+        "phase": "spark",
+        "purpose": "Validate foundational clarity and early feasibility",
+        "validates": [
+          "purpose_clarity",
+          "audience_definition",
+          "tone_alignment",
+          "success_metrics",
+          "early_feasibility"
+        ],
+        "required_proofs": [
+          "Purpose statement (1-2 sentences)",
+          "Target audience persona",
+          "Tone/voice definition",
+          "3-5 success metrics",
+          "Basic feasibility check"
+        ],
+        "blocking_conditions": [
+          "Purpose unclear or contradictory",
+          "Audience undefined",
+          "Success metrics missing",
+          "Obvious feasibility blockers"
+        ]
+      },
+      {
+        "id": "B1",
+        "name": "Build Gate",
+        "phase": "build",
+        "purpose": "Validate structural integrity and planning completeness",
+        "validates": [
+          "structure_clarity",
+          "technical_plan",
+          "financial_viability",
+          "rights_mapped"
+        ],
+        "required_proofs": [
+          "Detailed project structure",
+          "Technical architecture or plan",
+          "Financial model with cashflow",
+          "Rights/IP mapping complete",
+          "Resource allocation plan"
+        ],
+        "blocking_conditions": [
+          "Technical plan incomplete",
+          "Financial model shows negative viability",
+          "Rights issues unresolved",
+          "Critical resources unavailable"
+        ]
+      },
+      {
+        "id": "L1",
+        "name": "Launch Gate",
+        "phase": "launch",
+        "purpose": "Validate readiness for public or operational deployment",
+        "validates": [
+          "technical_readiness",
+          "legal_clearance",
+          "operational_integrity",
+          "cashflow_buffer"
+        ],
+        "required_proofs": [
+          "Technical systems tested and operational",
+          "Legal review completed",
+          "Operational runbook documented",
+          "3-month cashflow buffer confirmed",
+          "Launch checklist 100% complete"
+        ],
+        "blocking_conditions": [
+          "Technical failures in testing",
+          "Legal issues unresolved",
+          "Operational gaps identified",
+          "Insufficient cashflow buffer"
+        ]
+      },
+      {
+        "id": "E1",
+        "name": "Expand Gate",
+        "phase": "expand",
+        "purpose": "Validate scalability and sustainability",
+        "validates": [
+          "scalable_systems",
+          "stable_margins",
+          "integrity_intact",
+          "repeatable_workflows"
+        ],
+        "required_proofs": [
+          "Systems can scale 3x without breaking",
+          "Margins stable or improving",
+          "Quality/integrity maintained under load",
+          "Workflows documented and repeatable",
+          "Customer satisfaction stable (NPS ≥ 30)"
+        ],
+        "blocking_conditions": [
+          "Systems fail under increased load",
+          "Margins deteriorating",
+          "Quality degradation observed",
+          "Workflows not documented"
+        ]
+      },
+      {
+        "id": "EV1",
+        "name": "Evergreen Gate",
+        "phase": "evergreen",
+        "purpose": "Validate long-term sustainability and maintenance",
+        "validates": [
+          "nps_stability",
+          "compliance_renewal",
+          "rights_lineage_intact",
+          "predictable_maintenance"
+        ],
+        "required_proofs": [
+          "NPS stable ≥ 30 for 6+ months",
+          "Compliance certifications renewed",
+          "Rights/IP lineage fully documented",
+          "Maintenance costs predictable",
+          "Knowledge transfer documented"
+        ],
+        "blocking_conditions": [
+          "NPS declining trend",
+          "Compliance lapses",
+          "Rights lineage gaps",
+          "Maintenance costs unpredictable"
+        ]
+      }
+    ],
+    "gate_passage_rules": {
+      "approval_required": "Domain lead (weight 3+) and strategic owner (weight 5) for high-risk gates",
+      "documentation": "All gate passages must be logged with timestamp, approver, and evidence",
+      "rollback": "Failed gates trigger rollback to previous phase unless override approved by weight 5"
+    }
+  },
+
+  "rights_layer": {
+    "ocid_schema": {
+      "version": "4.6",
+      "format": "{type}-{project}-v{version}-{owner}-{timestamp}",
+      "components": {
+        "type": {
+          "description": "Artifact type code",
+          "examples": ["DOC", "CODE", "MEDIA", "MODEL", "DATA", "DEC"],
+          "pattern": "^[A-Z]{2,6}$"
+        },
+        "project": {
+          "description": "Project identifier",
+          "pattern": "^[A-Z0-9]{2,12}$"
+        },
+        "version": {
+          "description": "Semantic version",
+          "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+        },
+        "owner": {
+          "description": "Owner/creator identifier",
+          "pattern": "^[A-Z]{2,6}$"
+        },
+        "timestamp": {
+          "description": "ISO 8601 timestamp in format YYYYMMDDHHmmss",
+          "pattern": "^[0-9]{14}$"
+        }
+      },
+      "metadata_schema": {
+        "ocid": {"type": "string"},
+        "created_at": {"type": "string", "format": "date-time"},
+        "created_by": {"type": "string"},
+        "parent_ocid": {"type": "string", "nullable": true},
+        "lineage_chain": {"type": "array", "items": {"type": "string"}},
+        "rights_flags": {
+          "type": "object",
+          "properties": {
+            "human_authored": {"type": "boolean"},
+            "ai_assisted": {"type": "boolean"},
+            "ai_contribution_percentage": {"type": "number", "minimum": 0, "maximum": 100},
+            "licensed_content": {"type": "boolean"},
+            "license_type": {"type": "string"},
+            "voice_likeness_used": {"type": "boolean"},
+            "consent_on_file": {"type": "boolean"}
+          }
+        },
+        "compliance_metadata": {
+          "type": "object",
+          "properties": {
+            "soc2_compliant": {"type": "boolean"},
+            "hipaa_compliant": {"type": "boolean"},
+            "gdpr_compliant": {"type": "boolean"},
+            "nist_compliant": {"type": "boolean"},
+            "export_restricted": {"type": "boolean"}
+          }
+        }
+      }
+    },
+    
+    "voice_likeness_protection": {
+      "version": "4.6",
+      "components": [
+        {
+          "name": "voiceprint_mapping",
+          "description": "Biometric voiceprint storage and matching",
+          "required_fields": ["subject_id", "voiceprint_hash", "consent_date", "usage_scope"]
+        },
+        {
+          "name": "public_voice_use_policy",
+          "description": "Public-facing policy on voice/likeness usage",
+          "required_fields": ["policy_url", "effective_date", "consent_mechanism"]
+        },
+        {
+          "name": "licensing_metadata",
+          "description": "License terms for voice/likeness usage",
+          "required_fields": ["license_type", "duration", "territories", "exclusions"]
+        },
+        {
+          "name": "takedown_system",
+          "description": "Process for removing unauthorized usage",
+          "required_fields": ["request_mechanism", "response_sla", "verification_process"]
+        }
+      ]
+    },
+
+    "drift_detection": {
+      "version": "4.6",
+      "checks": [
+        {
+          "type": "unlicensed_material",
+          "description": "Detects content without proper licensing",
+          "severity": "high",
+          "triggers": ["Missing license metadata", "Expired license", "Out-of-scope usage"]
+        },
+        {
+          "type": "missing_ocids",
+          "description": "Detects artifacts without OCIDs",
+          "severity": "critical",
+          "triggers": ["New artifact without OCID", "OCID generation failure"]
+        },
+        {
+          "type": "mismatched_lineage",
+          "description": "Detects broken or contradictory lineage chains",
+          "severity": "high",
+          "triggers": ["Parent OCID not found", "Circular lineage", "Lineage gap"]
+        },
+        {
+          "type": "external_content_violations",
+          "description": "Detects unauthorized external content",
+          "severity": "critical",
+          "triggers": ["Unverified external source", "Blocked domain content", "License conflict"]
+        }
+      ],
+      "response_protocol": {
+        "yellow": "Log and notify",
+        "orange": "Block and require remediation",
+        "red": "Block, quarantine, and escalate to legal"
+      }
+    }
+  },
+
+  "operator_mesh": {
+    "version": "4.6",
+    "total_roles": 35,
+    "families": [
+      {
+        "id": "exec_arch",
+        "name": "Executive & Architecture",
+        "description": "Strategic leadership and systems architecture",
+        "roles": ["Strategist", "Architect", "Risk Manager"]
+      },
+      {
+        "id": "creative",
+        "name": "Creative Engine",
+        "description": "Creative ideation and artistic direction",
+        "roles": ["Creative Director", "Designer", "Composer"]
+      },
+      {
+        "id": "writers",
+        "name": "Writers Room",
+        "description": "Narrative development and content creation",
+        "roles": ["Lead Writer", "Script Editor", "Content Strategist"]
+      },
+      {
+        "id": "systems_ops",
+        "name": "Systems & Operations",
+        "description": "Operational execution and technical delivery",
+        "roles": ["Operations Lead", "Technical Lead", "Production Manager"]
+      },
+      {
+        "id": "growth",
+        "name": "Growth & Commercial",
+        "description": "Business development and commercial strategy",
+        "roles": ["Business Development", "Marketing Lead", "Sales Lead"]
+      },
+      {
+        "id": "data_integrity",
+        "name": "Data & Integrity",
+        "description": "Data governance and quality assurance",
+        "roles": ["Data Architect", "QA Lead", "Compliance Officer"]
+      },
+      {
+        "id": "legacy_auth",
+        "name": "Legacy & Authorship",
+        "description": "Rights management and authorship preservation",
+        "roles": ["Rights Manager", "Lineage Tracker", "Archivist"]
+      }
+    ],
+    "role_schema": {
+      "required_fields": [
+        "role_id",
+        "title",
+        "tagline",
+        "description",
+        "focus_areas",
+        "traits",
+        "invoke_pattern",
+        "decision_weight",
+        "phase_alignment"
+      ],
+      "field_definitions": {
+        "role_id": {"type": "string", "pattern": "^[a-z_]+$"},
+        "title": {"type": "string"},
+        "tagline": {"type": "string", "maxLength": 100},
+        "description": {"type": "string"},
+        "focus_areas": {"type": "array", "items": {"type": "string"}},
+        "traits": {"type": "array", "items": {"type": "string"}},
+        "invoke_pattern": {"type": "string", "description": "Regex or keyword pattern to invoke this operator"},
+        "decision_weight": {"type": "integer", "enum": [1, 3, 5]},
+        "phase_alignment": {
+          "type": "array",
+          "items": {"type": "string", "enum": ["spark", "build", "launch", "expand", "evergreen", "all"]}
+        }
+      }
+    },
+    "routing_rules": {
+      "simple_query": "Route to single most appropriate operator",
+      "complex_decision": "Route to 3-7 operators across relevant domains",
+      "high_risk": "Must include Risk Manager + domain lead",
+      "rights_sensitive": "Must include Rights Manager",
+      "financial": "Must include Financial Analyst + Business Development",
+      "public_facing": "Must include Brand Manager + Legal Counsel"
+    }
+  },
+
+  "context_ledger": {
+    "version": "4.6",
+    "description": "Immutable append-only ledger storing all system context, decisions, and artifacts",
+    "schema": {
+      "entry_id": {"type": "string", "format": "uuid"},
+      "entry_type": {"type": "string", "enum": ["decision", "artifact", "anchor", "tributary", "drift_event", "compliance_entry", "gate_passage"]},
+      "project_id": {"type": "string"},
+      "ocid": {"type": "string"},
+      "timestamp": {"type": "string", "format": "date-time"},
+      "phase": {"type": "string", "enum": ["spark", "build", "launch", "expand", "evergreen"]},
+      "operator_involvement": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "role": {"type": "string"},
+            "action": {"type": "string"},
+            "timestamp": {"type": "string", "format": "date-time"}
+          }
+        }
+      },
+      "anchors": {
+        "type": "object",
+        "description": "Core constraints that must remain stable",
+        "properties": {
+          "purpose": {"type": "string"},
+          "audience": {"type": "string"},
+          "tone": {"type": "string"},
+          "budget": {"type": "number"},
+          "deadline": {"type": "string", "format": "date"}
+        }
+      },
+      "tributaries": {
+        "type": "array",
+        "description": "Contextual threads feeding into the project",
+        "items": {
+          "type": "object",
+          "properties": {
+            "tributary_id": {"type": "string"},
+            "source": {"type": "string"},
+            "influence": {"type": "string"}
+          }
+        }
+      },
+      "decisions": {
+        "type": "array",
+        "items": {"$ref": "#/decision_framework/decision_object_v46"}
+      },
+      "artifacts": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "artifact_ocid": {"type": "string"},
+            "artifact_type": {"type": "string"},
+            "created_by": {"type": "string"},
+            "storage_location": {"type": "string"}
+          }
+        }
+      },
+      "compliance_entries": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "compliance_type": {"type": "string"},
+            "status": {"type": "string", "enum": ["compliant", "pending", "violated"]},
+            "verified_by": {"type": "string"},
+            "verified_at": {"type": "string", "format": "date-time"}
+          }
+        }
+      },
+      "drift_events": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "drift_type": {"type": "string"},
+            "severity": {"type": "string", "enum": ["yellow", "orange", "red"]},
+            "detected_at": {"type": "string", "format": "date-time"},
+            "resolution_status": {"type": "string"},
+            "resolution_actions": {"type": "array", "items": {"type": "string"}}
+          }
+        }
+      },
+      "versions": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "version": {"type": "string"},
+            "created_at": {"type": "string", "format": "date-time"},
+            "changes": {"type": "array", "items": {"type": "string"}},
+            "snapshot_ocid": {"type": "string"}
+          }
+        }
+      }
+    },
+    "guarantees": [
+      "no_context_drift",
+      "no_decision_loss",
+      "cross_vertical_continuity",
+      "full_lineage_reconstruction",
+      "immutable_history",
+      "cryptographic_integrity"
+    ],
+    "retention_policy": {
+      "active_projects": "Indefinite retention",
+      "completed_projects": "7 years minimum",
+      "archived_projects": "Permanent retention in cold storage",
+      "compliance_required": "As required by regulation (e.g., HIPAA, SOC2)"
+    }
+  },
+
+  "os_factory": {
+    "version": "4.6",
+    "description": "Five-step engine that generates operationally governed vertical OSs for any domain",
+    "pipeline": [
+      {
+        "step": 1,
+        "name": "Scope → Intake",
+        "purpose": "Collect domain, purpose, compliance requirements, and constraints",
+        "inputs": [
+          "Domain/vertical specification",
+          "Business purpose and objectives",
+          "Compliance requirements (SOC2, HIPAA, etc.)",
+          "Constraints (budget, timeline, resources)",
+          "Success criteria"
+        ],
+        "outputs": [
+          "Scoping document",
+          "Compliance matrix",
+          "Constraint catalog",
+          "Success metrics definition"
+        ],
+        "validation": "Completeness check + stakeholder sign-off"
+      },
+      {
+        "step": 2,
+        "name": "Structure → Blueprint",
+        "purpose": "Define roles, gates, workflows, and artifacts",
+        "inputs": [
+          "Scoping document from Step 1",
+          "Industry best practices",
+          "MOSE role library",
+          "Workflow templates"
+        ],
+        "outputs": [
+          "Role assignment matrix",
+          "Gate structure with validation criteria",
+          "Workflow diagrams",
+          "Artifact templates"
+        ],
+        "validation": "Structural integrity check + feasibility review"
+      },
+      {
+        "step": 3,
+        "name": "Governance → Install",
+        "purpose": "Assign weights, define decision rules, install two-key protocols",
+        "inputs": [
+          "Blueprint from Step 2",
+          "Decision weight matrix",
+          "Two-key protocol triggers",
+          "Compliance requirements"
+        ],
+        "outputs": [
+          "Decision authority matrix",
+          "Two-key protocol configuration",
+          "Rollback procedures",
+          "Escalation paths"
+        ],
+        "validation": "Governance completeness + compliance alignment"
+      },
+      {
+        "step": 4,
+        "name": "Context → Load",
+        "purpose": "Import organizational context, legacy data, and operational knowledge",
+        "inputs": [
+          "Org charts",
+          "SOPs and runbooks",
+          "Legacy project data",
+          "Existing IP and rights records",
+          "Historical decision logs"
+        ],
+        "outputs": [
+          "Populated context ledger",
+          "Migrated OCID records",
+          "Knowledge base",
+          "Operator training data"
+        ],
+        "validation": "Data integrity check + lineage verification"
+      },
+      {
+        "step": 5,
+        "name": "Execution → Deploy",
+        "purpose": "Activate OS with full governance, monitoring, and compliance",
+        "inputs": [
+          "Fully configured OS from Steps 1-4",
+          "Deployment checklist",
+          "Monitoring configuration",
+          "Incident response plan"
+        ],
+        "outputs": [
+          "Live operational OS",
+          "Monitoring dashboards",
+          "Audit trail activation",
+          "User training materials"
+        ],
+        "validation": "Deployment readiness + live testing + stakeholder acceptance"
+      }
+    ],
+    "quality_gates": {
+      "each_step": "Must pass validation before proceeding",
+      "overall": "Full validation pack must be satisfied before production deployment"
+    }
+  },
+
+  "drift_engine": {
+    "version": "4.6",
+    "description": "Continuous monitoring system that detects and alerts on deviations from anchors, timelines, rights, risk, and compliance",
+    "monitors": [
+      {
+        "type": "anchor_drift",
+        "description": "Detects misalignment with core project anchors",
+        "checks": [
+          "purpose_misalignment",
+          "audience_misalignment",
+          "tone_misalignment",
+          "scope_creep",
+          "budget_variance"
+        ],
+        "detection_frequency": "Per artifact creation",
+        "alert_threshold": {
+          "yellow": "10% variance",
+          "orange": "25% variance",
+          "red": "50% variance or fundamental contradiction"
+        }
+      },
+      {
+        "type": "timeline_drift",
+        "description": "Detects schedule slippage and workflow bottlenecks",
+        "checks": [
+          "delayed_milestones",
+          "workflow_failures",
+          "gate_passage_delays",
+          "critical_path_blockage"
+        ],
+        "detection_frequency": "Daily",
+        "alert_threshold": {
+          "yellow": "1-3 days delay",
+          "orange": "4-7 days delay",
+          "red": ">7 days delay or critical path blocked"
+        }
+      },
+      {
+        "type": "rights_drift",
+        "description": "Detects rights and IP integrity issues",
+        "checks": [
+          "ocid_mismatch",
+          "unlicensed_content",
+          "broken_lineage",
+          "consent_expiration",
+          "license_violation"
+        ],
+        "detection_frequency": "Per artifact creation",
+        "alert_threshold": {
+          "yellow": "Non-critical metadata missing",
+          "orange": "License nearing expiration",
+          "red": "Unlicensed content or broken lineage"
+        }
+      },
+      {
+        "type": "risk_drift",
+        "description": "Detects new or unaddressed risks",
+        "checks": [
+          "unaddressed_new_risks",
+          "risk_severity_increase",
+          "mitigation_plan_gaps",
+          "risk_threshold_breach"
+        ],
+        "detection_frequency": "Per decision + daily scan",
+        "alert_threshold": {
+          "yellow": "New low-risk issue",
+          "orange": "Medium-risk issue or unmitigated low-risk",
+          "red": "High/critical risk or cascading risks"
+        }
+      },
+      {
+        "type": "compliance_drift",
+        "description": "Detects compliance gaps and regulatory violations",
+        "checks": [
+          "missing_legal_steps",
+          "missing_regulatory_steps",
+          "expired_certifications",
+          "audit_failures",
+          "data_privacy_violations"
+        ],
+        "detection_frequency": "Per artifact + weekly audit",
+        "alert_threshold": {
+          "yellow": "Non-critical compliance gap",
+          "orange": "Certification nearing expiration",
+          "red": "Active violation or expired certification"
+        }
+      }
+    ],
+    "severity_levels": {
+      "yellow": {
+        "name": "Advisory",
+        "action": "Log and notify relevant operator",
+        "escalation": "None"
+      },
+      "orange": {
+        "name": "Action Required",
+        "action": "Block further progress until resolved",
+        "escalation": "Notify domain lead (weight 3+)"
+      },
+      "red": {
+        "name": "Critical",
+        "action": "Immediate stop + quarantine affected artifacts",
+        "escalation": "Notify final authority (weight 5) + trigger rollback protocol"
+      }
+    },
+    "output_includes": [
+      "severity",
+      "drift_type",
+      "affected_artifacts",
+      "required_actions",
+      "updated_ocid",
+      "forensic_trail",
+      "recommended_rollback"
+    ]
+  },
+
+  "validation_pack": {
+    "version": "4.6",
+    "description": "Comprehensive validation suite that every vertical OS must pass before production deployment",
+    "validates": [
+      {
+        "category": "roles",
+        "checks": [
+          "All required roles defined",
+          "No orphaned responsibilities",
+          "Decision weights properly assigned",
+          "Invoke patterns unique and functional"
+        ]
+      },
+      {
+        "category": "gate_structures",
+        "checks": [
+          "All five gates defined",
+          "Validation criteria complete",
+          "Blocking conditions specified",
+          "Approval authorities assigned"
+        ]
+      },
+      {
+        "category": "compliance_rules",
+        "checks": [
+          "Required compliance frameworks identified",
+          "Compliance checks automated where possible",
+          "Audit trail complete",
+          "Data retention policies defined"
+        ]
+      },
+      {
+        "category": "rights_lineage",
+        "checks": [
+          "OCID generation functional",
+          "Lineage tracking operational",
+          "Rights metadata complete",
+          "Voice/likeness protections active"
+        ]
+      },
+      {
+        "category": "operator_routing",
+        "checks": [
+          "Routing rules defined for all decision types",
+          "Multi-operator collaboration paths clear",
+          "Escalation paths defined",
+          "Consultation requirements specified"
+        ]
+      },
+      {
+        "category": "phase_timing",
+        "checks": [
+          "Phase transitions defined",
+          "Gate passage criteria clear",
+          "Rollback procedures documented",
+          "Timeline buffers adequate"
+        ]
+      },
+      {
+        "category": "sop_mapping",
+        "checks": [
+          "SOPs mapped to workflows",
+          "Runbooks complete",
+          "Training materials available",
+          "Knowledge transfer documented"
+        ]
+      },
+      {
+        "category": "export_compatibility",
+        "checks": [
+          "All exports include required metadata",
+          "Export formats validated",
+          "Version control functional",
+          "Audit trail preserved in exports"
+        ]
+      }
+    ],
+    "validation_process": {
+      "automated_checks": "Run via validation script",
+      "manual_review": "Domain expert + compliance officer",
+      "sign_off_required": "Final authority (weight 5) + compliance officer"
+    },
+    "outputs": {
+      "validation_certificate": {
+        "ocid": "Generated upon successful validation",
+        "timestamp": "ISO 8601 format",
+        "validated_by": "List of validators",
+        "expiration": "Annual renewal required",
+        "findings": "List of any warnings or advisory notes"
+      }
+    }
+  },
+
+  "versioning": {
+    "scheme": "semver",
+    "format": "major.minor.patch",
+    "rules": {
+      "major": "Breaking changes to core principles or architecture",
+      "minor": "New features or non-breaking enhancements",
+      "patch": "Bug fixes and minor improvements"
+    },
+    "snapshot_triggers": [
+      "gate_pass",
+      "major_decision",
+      "compliance_milestone",
+      "version_increment"
+    ],
+    "snapshot_includes": [
+      "immutable_snapshot",
+      "full_ocid_set",
+      "rights_record",
+      "compliance_record",
+      "operator_record",
+      "decision_log",
+      "artifact_catalog"
+    ],
+    "snapshot_storage": {
+      "format": "Compressed JSON",
+      "encryption": "AES-256",
+      "retention": "Permanent",
+      "location": "Distributed ledger + cold storage backup"
+    }
+  },
+
+  "exports": {
+    "artifact_types": [
+      {
+        "type": "briefs",
+        "description": "Executive summaries and strategic briefs",
+        "format": ["PDF", "DOCX", "MD"]
+      },
+      {
+        "type": "decks",
+        "description": "Presentation materials",
+        "format": ["PPTX", "PDF"]
+      },
+      {
+        "type": "os_blueprints",
+        "description": "Vertical OS architectural documents",
+        "format": ["JSON", "PDF", "MD"]
+      },
+      {
+        "type": "gateboard_views",
+        "description": "Gate status and validation dashboards",
+        "format": ["HTML", "PDF", "JSON"]
+      },
+      {
+        "type": "financial_models",
+        "description": "Financial projections and budget tracking",
+        "format": ["XLSX", "CSV", "JSON"]
+      },
+      {
+        "type": "compliance_logs",
+        "description": "Audit trails and compliance reports",
+        "format": ["JSON", "PDF", "CSV"]
+      },
+      {
+        "type": "contract_templates",
+        "description": "Legal agreements and licensing templates",
+        "format": ["DOCX", "PDF"]
+      },
+      {
+        "type": "sop_playbooks",
+        "description": "Standard operating procedures and runbooks",
+        "format": ["MD", "PDF", "DOCX"]
+      }
+    ],
+    "required_metadata": {
+      "ocid": "Origin Chain ID",
+      "version": "Semantic version",
+      "timestamp": "ISO 8601 creation timestamp",
+      "owner": "Creator/owner identifier",
+      "export_date": "ISO 8601 export timestamp",
+      "export_format": "File format",
+      "rights_status": "Rights and licensing status",
+      "compliance_status": "Compliance validation status"
+    },
+    "export_validation": {
+      "pre_export": "Validate artifact completeness and rights clearance",
+      "post_export": "Verify metadata inclusion and format integrity",
+      "audit_log": "Record export event in context ledger"
+    }
+  },
+
+  "metadata": {
+    "schema_version": "4.6.0",
+    "last_updated": "2024-12-02",
+    "maintained_by": "Pearl & Pig - Jon (Founder & Architect)",
+    "license": "Proprietary - Pearl & Pig",
+    "contact": "governance@pearlandpig.com",
+    "documentation": "https://pearlandpig.com/docs/mose/v4.6",
+    "changelog_url": "https://pearlandpig.com/docs/mose/v4.6/changelog"
+  }
+}
